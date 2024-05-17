@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import CountryListCreateView, CountryDetailView, AllCountriesListView, CountryDeleteView, CountryUpdateView, CityListCreateView, CityDetailView, AllCitiesListView, CityDeleteView, CityUpdateView, CapitalListCreateView, CapitalDetailView, AllCapitalsListView, CapitalDeleteView, CapitalUpdateView
+from .views import CountryListCreateView, CountryDetailView, AllCountriesListView, CountryDeleteView, CountryUpdateView, CityListCreateView, CityDetailView, AllCitiesListView, CityDeleteView, CityUpdateView, CapitalListCreateView, CapitalDetailView, AllCapitalsListView, CapitalDeleteView, CapitalUpdateView, ObjectsWithinBboxView
 
 urlpatterns = [
     path('countries/', CountryListCreateView.as_view(), name='country-list-create'),
@@ -17,4 +17,5 @@ urlpatterns = [
     path('capitals/all/', AllCapitalsListView.as_view(), name='all-capitals-list'),
     path('capitals/delete/<int:pk>/', CapitalDeleteView.as_view(), name='capital-delete'),
     path('capitals/update/<int:pk>/', CapitalUpdateView.as_view(), name='capital-update'),
+    path('bbox-objects/', ObjectsWithinBboxView.as_view(), name='bbox_objects'),
 ]
